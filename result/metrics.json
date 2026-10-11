@@ -1,0 +1,44 @@
+{
+  "strategy": {
+    "total_return": 1.0259321077727832,
+    "CAGR": 0.4257734938364861,
+    "MDD": -0.17749521167263882,
+    "MDD_peak": "2024-01-29",
+    "MDD_trough": "2024-04-17",
+    "sharpe": 1.3946953131992887,
+    "volatility": 0.2845477616037059,
+    "start": "2024-01-03",
+    "end": "2025-12-30"
+  },
+  "strategy_module": "my_strategy",
+  "buy_and_hold_return": 0.27164962023147377,
+  "design_cutoff": "2023-12-31",
+  "test_start": "2024-01-01",
+  "mode": "final",
+  "price_source": "disk cache (pool)",
+  "fund_source": "edgar FY(filed<=2023-12-31) + manual(0) - 1450/3175종목 확보, 결측 최하위",
+  "n_trades": 1800,
+  "cross_check": {
+    "lib": "empyrical-reloaded",
+    "metrics": [
+      "annual_return",
+      "max_drawdown",
+      "sharpe_ratio",
+      "sortino_ratio",
+      "calmar_ratio"
+    ],
+    "values": {
+      "annual_return": 0.428396,
+      "max_drawdown": -0.177495,
+      "sharpe_ratio": 1.394695,
+      "sortino_ratio": 2.321484,
+      "calmar_ratio": 2.413564
+    },
+    "available": true
+  },
+  "universe": {
+    "source": "pool",
+    "listed": 3175,
+    "liquid": 3175
+  }
+}

@@ -1,0 +1,8 @@
+# 대용량 수집 데이터 (재수집·재생성 가능 — 저장소 제외)
+data/prices_*.csv
+data/volumes_*.csv
+data/edgar_cache/
+# 환경·실험기록·캐시
+.venv/
+__pycache__/
+outputs_archive/

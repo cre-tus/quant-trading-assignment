@@ -1,0 +1,12 @@
+{
+  "source": "nasdaq live",
+  "listed": 6239,
+  "downloaded": 5753,
+  "liquid_n": 3175,
+  "filter": {
+    "universe": 5753,
+    "liquid": 3175,
+    "min_dollar_vol": 1000000,
+    "lookback": 60
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "turnover": 75.328,
+  "fee_est": 93918483.87,
+  "fee_pct_of_cap": 0.0939,
+  "trades_by_reason": {
+    "SHORT_SELL(rsi)": 646,
+    "REBALANCE": 549,
+    "SHORT_BUY(rsi)": 397,
+    "SHORT_STOP": 199,
+    "INIT": 9
+  },
+  "rsi_sells": 646,
+  "rsi_buys": 397,
+  "rsi_sell_fwd20_mean": 0.0033,
+  "rsi_buy_fwd20_mean": 0.0178,
+  "top_picks": {
+    "CASH": 36,
+    "SSP": 25,
+    "RILY": 15,
+    "EBS": 14
+  },
+  "avg_weights_top3": {
+    "SSP": 0.062,
+    "CRNC": 0.053,
+    "RILY": 0.049
+  },
+  "best_month": {
+    "date": "2025-11-30",
+    "ret": 0.17172553687504744
+  },
+  "worst_month": {
+    "date": "2024-04-30",
+    "ret": -0.09553281940536174
+  },
+  "neg_months": 6,
+  "total_months": 23,
+  "recovery_days": 21,
+  "fee_free_total_return": 1.1224,
+  "excess_vs_bh": 0.7543,
+  "top_bh_ticker": {
+    "ticker": "QBTS",
+    "ret": 30.934305531948958
+  }
+}

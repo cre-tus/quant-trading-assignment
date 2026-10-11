@@ -1,0 +1,15 @@
+# FY2023 확정 펀더멘털 (design_cutoff=2023-12-31 이전 공시분만 사용).
+# trailingPE, priceToBook 열을 종목별로 채우면 yfinance 현재값 대신 이 값이 쓰인다.
+# 비워두면 yfinance 현재값으로 채워지고 metrics.json 출처에 LOOKAHEAD-RISK로 기록된다.
+# 출처 예시: 각사 2023 annual report (10-K) / FY2023 EPS, BPS.
+ticker,trailingPE,priceToBook
+AAPL,,
+MSFT,,
+NVDA,,
+AVGO,,
+AMZN,,
+META,,
+GOOGL,,
+JPM,,
+XOM,,
+JNJ,,

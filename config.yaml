@@ -1,0 +1,53 @@
+# 리밸런싱 백테스트 연구 시스템 설정
+market: US          # US | KR (KR은 Stooq/수동CSV 권장, config 하단 참고)
+currency: USD
+initial_capital: 1000000000  # 10억 (수익률에는 영향 없음, 단위 규약)
+mode: "final"  # experiment(2023년 개발) | final(2024~2025 본 백테스트)
+start: "2024-01-01"
+end: "2025-12-31"
+design_cutoff: "2023-12-31"  # 전략 설계에 쓸 수 있는 마지막 날짜. 이후는 미래(표본외)
+warmup_start: "2023-10-01"   # 지표 웜업용 추가 수집 시작일 (매매는 start부터)
+
+universe_source: "edgar"  # edgar(전종목) | file | config
+universe_file: "data/universe_us.txt"  # source=file일 때 사용
+fund_mode: "edgar"  # edgar(filed≤cutoff 확정치) | snapshot(yfinance 현재값)
+min_dollar_vol: 1000000  # 컷오프 직전 60일 평균 일대금 하한(유동성 필터)
+universe:
+  - AAPL
+  - MSFT
+  - NVDA
+  - AVGO
+  - AMZN
+  - META
+  - GOOGL
+  - JPM
+  - XOM
+  - JNJ
+cash_yield_annual: 0.04   # 현금(MMF) 가정 수익률
+
+strategy:
+  module: "my_strategy"  # 본인 전략. 테스트용 예시는 "example_value_rsi"
+  option: 1               # 1 = PER+PBR 상위4개 각20% + 현금20% (예시 전략 기준)
+  top_n: 4
+  weight_each: 0.20
+  cash_weight: 0.20
+  band_expand: 0.20       # 임시 확대 허용: 종목당 최대 20%*1.2=24%
+  rebalance_freq: "2W"    # 1W | 2W | 4W | M | Q
+  rsi_window: 14
+  rsi_sell: 85            # 예시 전략용 (본 전략은 short 섹션 사용)
+  rsi_buy: 20
+  short:                  # 단기 신호 세트 (2023년 스위프로 rsi 30/60 확정)
+    signal: "rsi"
+    rsi_buy: 20
+    rsi_sell: 70
+    cooldown_days: 10
+    stop_loss: 0.10        # 매수 쿨다운(일). 2023년 실험으로 확정
+  rebalance_band: 0.02     # 목표비중 이탈 허용폭 (이 안은 무거래)
+
+costs:
+  fee_rate: 0.001         # 왕복 아님, 편도 수수료율
+  tax_rate: 0.0           # 미국 매도세 단순화(0), 한국이면 0.002 참고
+
+outputs:
+  dir: "outputs"
+  pptx: "outputs/report.pptx"
