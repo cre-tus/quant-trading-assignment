@@ -196,6 +196,8 @@
 >   outputs_archive/로 이동. 본 파일의 outputs_exp/풀 스위프 경로는 아카이브 안에서 참조.
 > - 리팩토링: 프로젝트 전체를 AI퀀트/로 이동(코드 경로 상대참조라 무수정, 38테스트 통과).
 >   실행은 AI퀀트/에서 (`.venv\Scripts\python.exe run_backtest.py ...`).
+> - 퍼블리시: [quant-trading-assignment](https://github.com/cre-tus/quant-trading-assignment)
+>   main에 푸시. 대용량 시세·venv·실험 아카이브 제외, 코드+문서+result(제출물) 포함.
 > - P기록: 풀 NASDAQ 6239→수신 5753→유동성 3175(2022-10-01~2025-12-31, 813일).
 >   상장폐지 꼬리 NaN은 ffill 최종가 평탄화(선행 NaN 유지, 미래정보 미사용) — 미처리 시
 >   2024-10-16부터 equity NaN으로 본선이 중단됨. EDGAR FY는 filed≤컷오프 10-K만
